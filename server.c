@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
@@ -57,8 +58,9 @@ int main(int argc, char *argv[]) {
 
     while (1) {
         /* accept client connection */
-        if ((client_fd = accept(fd, (struct sockaddr *)&cli_addr, &len_cli_addr))
-                == -1) {
+        client_fd = accept(fd, (struct sockaddr *)&cli_addr,
+            (socklen_t *)&len_cli_addr);
+        if (client_fd == -1) {
             perror("Error on accept");
             return 1;
         }
