@@ -10,4 +10,4 @@ client: client.c
 	$(CC) $(COPTS) client.c -o client -lpulse -lpulse-simple
 
 clean:
-	rm -rf *.o server client
+	rm -rf *.o *.dSYM server client

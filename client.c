@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     pa_simple *pa_stream;
     static const pa_sample_spec spec = {
         .format = PA_SAMPLE_S16LE,
-        .rate = 44100,
+        .rate = 96000,
         .channels = 2
     };
 
